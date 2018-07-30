@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/Blog/WebContent/WEB-INF/faces-config.xml">
+ <TreeFormPage>
+  <Memento type="FacesConfig20">
+   <Memento collapsed="false" type="Factories"/>
+   <Memento collapsed="false" type="Lifecycle"/>
+   <Memento collapsed="false" type="Advanced"/>
+  </Memento>
+  <Memento type="%No text%">
+   <Memento collapsed="false" type="Navigation Rules"/>
+  </Memento>
+  <Memento type="JSFNavigationRule20">
+   <Memento collapsed="false" type="Navigation Rule"/>
+   <Memento collapsed="false" type="Navigation Cases"/>
+   <Memento collapsed="false" type="Advanced"/>
+  </Memento>
+  <Memento type="JSFNavigationCase20">
+   <Memento collapsed="false" type="Navigation Case"/>
+   <Memento collapsed="false" type="Advanced"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

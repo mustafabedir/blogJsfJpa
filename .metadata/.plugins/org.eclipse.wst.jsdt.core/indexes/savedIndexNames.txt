@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/mustafa/Masaüstü/BlogJsf/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1071523784.index
+3022955282.index
+2733660752.index
+1880276730.index
+3301994153.index
+3134112101.index
+2727557156.index

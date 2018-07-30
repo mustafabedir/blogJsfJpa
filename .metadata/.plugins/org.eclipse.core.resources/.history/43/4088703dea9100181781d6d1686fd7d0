@@ -1,0 +1,8 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+public class Makale {
+
+}

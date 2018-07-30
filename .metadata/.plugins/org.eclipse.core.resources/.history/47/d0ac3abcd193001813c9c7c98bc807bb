@@ -1,0 +1,6 @@
+package com.blog.beans;
+
+@WebFilter(filterName = "AuthFilter", urlPatterns = {"*.xhtml"})
+public class AuthFilter {
+
+}

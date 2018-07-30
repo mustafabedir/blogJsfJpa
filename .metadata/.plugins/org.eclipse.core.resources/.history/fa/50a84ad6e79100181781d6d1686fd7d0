@@ -1,0 +1,5 @@
+package com.blog.entities;
+
+public class Kullanici {
+
+}

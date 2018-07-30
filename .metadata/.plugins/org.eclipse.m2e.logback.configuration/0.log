@@ -1,0 +1,5 @@
+2018-07-28 00:29:29,001 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2018-07-28 20:45:40,161 [Worker-208: Downloading sources for jasper-el.jar] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/7.0.90/tomcat-jasper-el-7.0.90-sources.jar
+2018-07-28 20:45:49,462 [Worker-193: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/faces/jsf-impl/2.0.4-b09/jsf-impl-2.0.4-b09-sources.jar
+2018-07-28 20:45:52,534 [Worker-204: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/faces/jsf-api/2.0.4-b09/jsf-api-2.0.4-b09-sources.jar
+2018-07-28 20:56:57,487 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.

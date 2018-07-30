@@ -1,0 +1,69 @@
+package com.blog.beans;
+
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import com.blog.entities.Kategori;
+import com.mergeCons.egitim.util.EntityUtil;
+
+@ManagedBean
+@SessionScoped
+public class KategoriBean {
+private Kategori kategori = new Kategori();
+	
+	public void kaydet()
+	{
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		em.persist(kategori);
+		em.getTransaction().commit();
+		kategori = new Kategori();
+	}
+	
+	public void sil() {
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		em.remove(kategori);
+		em.getTransaction().commit();
+		kategori = new Kategori();
+	}
+
+	public void duzenle() {
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		em.merge(kategori);
+		em.getTransaction().commit();
+		kategori = new Kategori();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Kategori> getkategoriListesi() {
+		EntityManager em = EntityUtil.getEntityManager();
+		String queryString = "FROM Kategori";
+			Query query = em.createQuery(queryString);
+		return query.getResultList();
+		
+	}
+	@SuppressWarnings("unchecked")
+	public List<Kategori> getKategoriAdlari()
+	{
+		EntityManager em = EntityUtil.getEntityManager();
+		String queryString = "Select distinct kullaniciAd From Kategori a";
+			Query query = em.createQuery(queryString);
+			return query.getResultList();
+		
+	}
+
+	public Kategori getKategori() {
+		return kategori;
+	}
+
+	public void setKategori(Kategori kategori) {
+		this.kategori = kategori;
+	}
+	
+}

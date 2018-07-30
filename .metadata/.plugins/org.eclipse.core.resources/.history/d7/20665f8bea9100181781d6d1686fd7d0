@@ -1,0 +1,14 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "makale")
+public class Makale {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer makaleID;
+	private String makaleBaslik;
+	private String makaleIcerik;
+
+}

@@ -1,0 +1,36 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "makale")
+public class Makale {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer makaleID;
+	private String makaleBaslik;
+	private String makaleIcerik;
+	@ManyToOne
+	
+	public Integer getMakaleID() {
+		return makaleID;
+	}
+	public void setMakaleID(Integer makaleID) {
+		this.makaleID = makaleID;
+	}
+	public String getMakaleBaslik() {
+		return makaleBaslik;
+	}
+	public void setMakaleBaslik(String makaleBaslik) {
+		this.makaleBaslik = makaleBaslik;
+	}
+	public String getMakaleIcerik() {
+		return makaleIcerik;
+	}
+	public void setMakaleIcerik(String makaleIcerik) {
+		this.makaleIcerik = makaleIcerik;
+	}
+	
+	
+
+}

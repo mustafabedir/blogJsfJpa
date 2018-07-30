@@ -1,0 +1,16 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "yorum")
+public class Yorum {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer yorumID;
+	private String yorumMetni;
+	private String adSoyad;
+	private String eMail;
+	@ManyToOne(cascade = )
+	private Makale makale = new Makale(); 
+}

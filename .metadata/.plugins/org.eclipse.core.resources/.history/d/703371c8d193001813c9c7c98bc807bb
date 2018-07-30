@@ -1,0 +1,8 @@
+package com.blog.beans;
+
+import javax.servlet.annotation.WebFilter;
+
+@WebFilter(filterName = "AuthFilter", urlPatterns = {"*.xhtml"})
+public class AuthFilter implements Filter{
+
+}

@@ -1,0 +1,10 @@
+1532727257187	Move 'persistence.xml' to 'META-INF'
+1532731571913	Encapsulate field 'makale'
+1532731665717	Encapsulate field 'makale'
+1532731886546	Encapsulate field 'etiket'
+1532731891033	Encapsulate field 'yorum'
+1532733478151	Delete element
+1532774884383	Encapsulate field 'kategoriID'
+1532800065155	Encapsulate field 'deger'
+1532800880004	Encapsulate field 'deger'
+1532810384926	Encapsulate field 'makaleCek'

@@ -1,0 +1,40 @@
+package com.blog.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "etiket")
+public class Etiket {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer etiketID;
+	private List<String> etiketAd = new ArrayList<String>();
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Makale makale = new Makale();
+	
+	
+	public Integer getEtiketID() {
+		return etiketID;
+	}
+	public void setEtiketID(Integer etiketID) {
+		this.etiketID = etiketID;
+	}
+	
+	public Makale getMakale() {
+		return makale;
+	}
+	public void setMakale(Makale makale) {
+		this.makale = makale;
+	}
+	public List<String> getEtiketAd() {
+		return etiketAd;
+	}
+	public void setEtiketAd(List<String> etiketAd) {
+		this.etiketAd = etiketAd;
+	}
+	
+	
+}

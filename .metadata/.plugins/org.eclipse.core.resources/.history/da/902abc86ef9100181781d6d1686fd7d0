@@ -1,0 +1,63 @@
+package com.blog.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "makale")
+public class Makale {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer makaleID;
+	private String makaleBaslik;
+	private String makaleIcerik;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "kategoriID", referencedColumnName ="kategoriID")
+	private Kategori kategori = new Kategori();
+	@OneToMany(mappedBy = "makale")
+	private List<Etiket> etiket = new ArrayList<Etiket>();
+	@OneToMany(mappedBy = "makale")
+	private List<Yorum> yorum = new List<Yorum>();
+	
+	public Integer getMakaleID() {
+		return makaleID;
+	}
+	public void setMakaleID(Integer makaleID) {
+		this.makaleID = makaleID;
+	}
+	public String getMakaleBaslik() {
+		return makaleBaslik;
+	}
+	public void setMakaleBaslik(String makaleBaslik) {
+		this.makaleBaslik = makaleBaslik;
+	}
+	public String getMakaleIcerik() {
+		return makaleIcerik;
+	}
+	public void setMakaleIcerik(String makaleIcerik) {
+		this.makaleIcerik = makaleIcerik;
+	}
+	public Kategori getKategori() {
+		return kategori;
+	}
+	public void setKategori(Kategori kategori) {
+		this.kategori = kategori;
+	}
+	public Etiket getEtiket() {
+		return etiket;
+	}
+	public void setEtiket(Etiket etiket) {
+		this.etiket = etiket;
+	}
+	public Yorum getYorum() {
+		return yorum;
+	}
+	public void setYorum(Yorum yorum) {
+		this.yorum = yorum;
+	}
+	
+	
+
+}

@@ -1,0 +1,14 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "deneme")
+public class Deneme {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column(name = "adddd", nullable=false)
+	private String ad;
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>Blog Kategori</title>
+	<style type="text/css">
+#formID {align ="center";
+	margin-top: 10px;
+	margin-right: 250px;
+	margin-left: 250px;
+}
+#btnKaydet {
+	margin-left: 790px;
+}
+#btnDuzenle {
+margin-top:-37px;
+	margin-left: 700px;
+}
+#dataTable {
+	margin-top: 10px;
+	margin-right: 100px;
+	margin-left: 100px;
+}
+</style>
+</h:head>
+<body>
+	<f:view>
+		<h:form>
+			Seçilen Kategori:
+			<h:selectOneMenu value="#{kategoriBean.kategoriListesi}">
+			
+			</h:selectOneMenu>
+		</h:form>
+	</f:view>
+</body>
+</html>

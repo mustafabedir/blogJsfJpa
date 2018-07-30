@@ -1,0 +1,9 @@
+package com.blog.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "yorum")
+public class Yorum {
+
+}

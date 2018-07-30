@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>E Ticaret-Admin</title>
+	<style type="text/css">
+#formID {align ="center";
+	margin-top: 10px;
+	margin-right: 250px;
+	margin-left: 250px;
+}
+
+#btnKaydet {
+	margin-left: 790px;
+}
+#btnDuzenle {
+margin-top:-37px;
+	margin-left: 700px;
+}
+#dataTable {
+	margin-top: 10px;
+	margin-right: 100px;
+	margin-left: 100px;
+}
+</style>
+</h:head>
+<body>
+	<f:view>
+		<h:form id="formID">
+			<div class="form-group">
+				<h:outputLabel value="Kullanici Adi" />
+				<h:inputText value="#{kullaniciBean.kullanici.kullaniciAd}"
+					class="form-control" />
+			</div>
+			<div class="form-group">
+				<h:outputLabel value="Şifre" />
+				<h:inputText value="#{kullaniciBean.kullanici.kullaniciSifre}"
+					class="form-control" />
+			</div>
+			<div id="btnKaydet">
+				<h:commandButton action="#{kullaniciBean.kaydet()}" value="Kaydet" class="btn btn-success"/>
+			</div>
+			<div id="btnDuzenle">
+				<h:commandButton action="#{kullaniciBean.duzenle()}" value="Duzenle" class="btn btn-primary"/>
+			</div>
+		</h:form>
+		<h:form>
+		<div id="dataTable">
+			<h:dataTable value="#{kullaniciBean.kullaniciListesi}" var="cls"
+				styleClass="table table-striped">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputLabel value="#{cls.kullaniciID}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Kullanıcı Ad</f:facet>
+					<h:outputLabel value="#{cls.kullaniciAd}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Kullanıcı Şifre</f:facet>
+					<h:outputLabel value="#{cls.kullaniciSifre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Sil</f:facet>
+					<h:commandLink  action="#{kullaniciBean.sil()}" value="Sil" class="btn btn-danger">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{kullaniciBean.kullanici}"></f:setPropertyActionListener>
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<f:facet name="header">Seç</f:facet>
+					<h:commandButton value="Seç" class="btn btn-primary">
+						<f:setPropertyActionListener value="#{cls}"
+							target="#{kullaniciBean.kullanici}"></f:setPropertyActionListener>
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</div>
+		</h:form>
+	</f:view>
+</body>
+</html>

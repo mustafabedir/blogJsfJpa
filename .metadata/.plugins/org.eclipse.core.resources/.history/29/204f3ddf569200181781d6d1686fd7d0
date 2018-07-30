@@ -1,0 +1,87 @@
+package com.blog.beans;
+
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import com.blog.entities.Etiket;
+import com.blog.entities.Kategori;
+import com.mergeCons.egitim.util.EntityUtil;
+
+@ManagedBean
+@SessionScoped
+public class EtiketBean {
+	private Integer kategoriID;
+	private Etiket etiket = new Etiket();
+
+	public void kaydet() {
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		String queryString = "FROM Kategori where kategoriID=:ID";
+		Query query = em.createQuery(queryString);
+		query.setParameter("ID", getKategoriID());
+		
+		Kategori kategori = (Kategori) query.getSingleResult();
+		etiket.getMakale().setKategori(kategori);
+		em.persist(etiket);
+		em.getTransaction().commit();
+		etiket = new Etiket();
+	}
+
+	public void sil() {
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		String queryString = "FROM Kategori where kategoriID=:ID";
+		Query query = em.createQuery(queryString);
+		query.setParameter("ID", getKategoriID());
+		
+		Kategori kategori = (Kategori) query.getSingleResult();
+		etiket.getMakale().setKategori(kategori);
+		em.remove(etiket);
+		em.getTransaction().commit();
+		etiket = new Etiket();
+	}
+
+	public void duzenle() {
+		EntityManager em = EntityUtil.getEntityManager();
+		em.getTransaction().begin();
+		String queryString = "FROM Kategori where kategoriID=:ID";
+		Query query = em.createQuery(queryString);
+		query.setParameter("ID", getKategoriID());
+		
+		Kategori kategori = (Kategori) query.getSingleResult();
+		etiket.getMakale().setKategori(kategori);
+		em.merge(etiket);
+		em.getTransaction().commit();
+		etiket = new Etiket();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Etiket> getEtiketListesi() {
+		EntityManager em = EntityUtil.getEntityManager();
+		String queryString = "FROM Etiket";
+		Query query = em.createQuery(queryString);
+		return query.getResultList();
+
+	}
+
+	public Etiket getEtiket() {
+		return etiket;
+	}
+
+	public void setEtiket(Etiket etiket) {
+		this.etiket = etiket;
+	}
+
+	public Integer getKategoriID() {
+		return kategoriID;
+	}
+
+	public void setKategoriID(Integer kategoriID) {
+		this.kategoriID = kategoriID;
+	}
+
+}
